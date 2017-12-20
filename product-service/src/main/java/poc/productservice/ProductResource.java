@@ -42,7 +42,7 @@ public class ProductResource {
 
         List<Product> resultProducts = new ArrayList<>();
         for (Product product : products) {
-            resultProducts.add(new Product(product.getId(), product.getName(), product.getPrice() * discountPercent / 100));
+            resultProducts.add(new Product(product.getId(), product.getName(), product.getPrice() - product.getPrice() * discountPercent / 100));
         }
         log.info("Product list retrieved");
         return resultProducts;
